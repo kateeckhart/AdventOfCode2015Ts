@@ -73,7 +73,7 @@ function Md5(input: string): Uint8Array {
             let chunk = new Uint8Array(128);
             let j;
             for (j = i; j < input_array.length; j++) {
-                chunk[j - i] = input_array[j];
+                chunk[j] = input_array[j - i];
             }
             chunk[j] = 0x80;
             j++;
