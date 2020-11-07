@@ -29,6 +29,7 @@ function runDay() {
     }
     part1_container.classList.add('hidden');
     part2_container.classList.add('hidden');
+    error_container.classList.add('hidden');
     let file = input_upload.files![0];
     if (file.size > 1024 * 1024) {
         error('Input is too big');
@@ -59,7 +60,7 @@ function runDay() {
             }
             time_text += String(seconds);
             timer_text.innerText = time_text;
-        }, 1000);
+        }, 500);
         worker.postMessage({input: text, dayN: dayN});
     }, (err) => {
         error(err.toString());
